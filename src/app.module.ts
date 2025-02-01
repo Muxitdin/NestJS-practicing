@@ -1,5 +1,7 @@
 import { Module } from "@nestjs/common";
-import * as process from "node:process";
+// import * as process from "node:process"; alternative for dotenv
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from "@nestjs/config";
 import { RolesService } from './roles/roles.service';
@@ -10,10 +12,11 @@ import { User } from "./users/users.entity";
 import { Role } from "./roles/roles.entity";
 import { UserRoles } from "./shared/entities/user-roles.entity";
 
+
 @Module({
     imports: [
         ConfigModule.forRoot({
-            envFilePath: `.${process.env.NODE_ENV}.env`,
+            envFilePath: `.env.${process.env.NODE_ENV}`,
         }),
         TypeOrmModule.forRoot({
             type: 'postgres',
