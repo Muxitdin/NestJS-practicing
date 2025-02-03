@@ -25,5 +25,5 @@ export class User {
     banReason: string;
 
     @OneToMany(() => UserRoles, (userRole) => userRole.user)
-    roles: UserRoles[];
+    roles: UserRoles[]; // roles that user has
 }

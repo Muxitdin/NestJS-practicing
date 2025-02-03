@@ -32,6 +32,42 @@
 $ npm install
 ```
 
+## Environment Variables Setup
+This project uses environment variables to manage configuration settings for different environments (development and production). Follow the instructions below to set them up properly.
+
+### 1. Create Environment Files
+Create two separate files in the root directory of your project:
+
+#### .env.development
+#### .env.production
+
+### 2. Add the Following Variables to the Files
+#### Example for .env.development:
+
+```bash
+# Server Configuration
+PORT=8000
+
+# PostgreSQL Configuration
+POSTGRES_PORT=5000
+POSTGRES_HOST=localhost
+POSTGRES_USER=postgres
+POSTGRES_DB=nest-course
+POSTGRES_PASSWORD=<your_db_password>
+```
+#### Example for .env.production:
+
+```bash
+# Server Configuration
+PORT=7000
+
+# PostgreSQL Configuration
+POSTGRES_PORT=5000
+POSTGRES_HOST=localhost
+POSTGRES_USER=postgres
+POSTGRES_DB=nest-course
+POSTGRES_PASSWORD=<your_db_password>
+```
 ## Compile and run the project
 
 ```bash
